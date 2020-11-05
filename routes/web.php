@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::get("/","Cvcontroller@index");
+Route::get("/ajouterCV","Cvcontroller@Ajouter");
+Route::POST("/add","Cvcontroller@Add");
+Route::get("/{id}/modifier","Cvcontroller@Modifier");
+Route::post("/update","Cvcontroller@Update");
+Route::get("/delete/{id}","Cvcontroller@Delete");
