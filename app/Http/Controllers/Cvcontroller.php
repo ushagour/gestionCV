@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cvs;
+use Illuminate\Support\Facades\DB;
+
+// use App\Cvs;
 
 
 class Cvcontroller extends Controller
 {
+
     //index of page 
     public function index()
     {
-        $listeCV = Cvs::all();
-return view("cv.index",["liste"=>$listeCV]);
+        $listeCV = DB::table('Cvs')
+        ->where('user_id',1)
+        ->paginate(5);
+
+        return view("cv.index",["liste"=>$listeCV]);
     }
 
     // affichage du formulaire de creation CV 
@@ -33,13 +39,17 @@ return view("cv.add");
             'presontation' => 'required',
         ]);
 
+        DB::table('Cvs')->insert([
+                'title' =>  $req->input("title"),
+                'presontation' =>  $req->input("presontation"),
+            ]
+        );
 
-        $cvmodel = new Cvs();
 
-        $cvmodel->title= $req->input("title");
-        $cvmodel->presontation= $req->input("presontation");
+
+    
+        // $cvmodel->user_id= session('data')-;
      //   return $req->all();
-        $cvmodel->save();
         session()->flash("success","le Cv a été enregigtre avec success !");
          return redirect('/');
 

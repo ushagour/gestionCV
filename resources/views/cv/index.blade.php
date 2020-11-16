@@ -45,8 +45,11 @@
           </td>
                     </tr>
                     @endforeach 
+             
                 </tbody>
             </table>
+<center>            {{ $liste->links() }}
+</center>
         </div>
     </div>
 </div>
