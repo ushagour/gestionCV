@@ -24,10 +24,10 @@
   {{csrf_field()}}
     <div class="col-md-8">
 <input type="text" name="idcv" value="{{ $cv_to_edit->id}}" hidden> 
-<input type="text" class="form-control" id="title" name="title" value=" {{ $cv_to_edit->title}}" >
+<input type="text" class="form-control" id="typeCV" name="typeCV" value=" {{ $cv_to_edit->typeCV}}" >
 <br>
 
-       <textarea class="form-control" id="presontation	" name="presontation"  rows="5"> {{ $cv_to_edit->presontation}}</textarea>
+       <textarea class="form-control" id="name" name="name"  rows="5"> {{ $cv_to_edit->name}}</textarea>
        
       <br>
     </div>

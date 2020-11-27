@@ -22,8 +22,8 @@
                 <thead>
                     <tr>
                         <td> id </td>
-                        <td> title </td>
-                        <td> presonation </td>
+                        <td> type de CV  </td>
+                        <td> name </td>
                         <td> date </td>
                         <td> operations  </td>
                     </tr>
@@ -33,8 +33,8 @@
                    @foreach($liste as $row)
                     <tr>
                         <td> {{ $row->id}}</td>
-                        <td> {{ $row->title}}</td>
-                        <td> {{ $row->presontation}}</td>
+                        <td> {{ $row->typeCV}}</td>
+                        <td> {{ $row->name}}</td>
                         <td> {{ $row->created_at}}</td>
                         <td> 
               

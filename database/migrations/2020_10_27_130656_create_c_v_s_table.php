@@ -15,9 +15,11 @@ class CreateCVSTable extends Migration
     {
         Schema::create('cvs', function (Blueprint $table) {
             $table->id();
-            $table->string("presontation");
-            
+            $table->string("typeCV");
+            $table->string("name");            
             $table->timestamps();
+            $table->dateTime("deleted_at")->nullable();
+
         });
     }
 

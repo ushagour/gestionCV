@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumDeletedAtCvs extends Migration
+class AddColumUserid extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,9 @@ class AddColumDeletedAtCvs extends Migration
     public function up()
     {
         Schema::table('cvs', function (Blueprint $table) {
-            //
-            $table->string("title");
-            $table->dateTime("deleted_at")->nullable();
+            $table->string('user_id')->nullable();
         });
+
     }
 
     /**
@@ -27,10 +26,6 @@ class AddColumDeletedAtCvs extends Migration
      */
     public function down()
     {
-        Schema::table('cvs', function (Blueprint $table) {
-            //
-            $table->dropColum("title");
-            $table->dropColumn("deleted_at");
-        });
+        //
     }
 }

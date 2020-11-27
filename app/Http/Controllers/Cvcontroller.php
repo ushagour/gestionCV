@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-// use App\Cvs;
+ use App\Cv;
 
 
 class Cvcontroller extends Controller
@@ -14,7 +14,7 @@ class Cvcontroller extends Controller
     //index of page 
     public function index()
     {
-        $listeCV = DB::table('Cvs')
+        $listeCV = DB::table('cvs')
         ->where('user_id',1)
         ->paginate(5);
 
@@ -39,9 +39,11 @@ return view("cv.add");
             'presontation' => 'required',
         ]);
 
-        DB::table('Cvs')->insert([
-                'title' =>  $req->input("title"),
-                'presontation' =>  $req->input("presontation"),
+        DB::table('cvs')->insert([
+                'typeCV' =>  $req->input("title"),
+                'name' =>  $req->input("presontation"),
+                'user_id' =>  1,// session userid
+                'created_at' =>  date("Y-m-d h:i"),
             ]
         );
 
@@ -57,7 +59,7 @@ return view("cv.add");
     // recupérer un CV et le metre  
     public function Modifier($id)
     {
-        $cv_to_edit = Cvs ::find($id);
+        $cv_to_edit = Cv ::find($id);
 
         return view("cv.edit",["cv_to_edit"=>$cv_to_edit]);
      //   echo $id;
@@ -66,14 +68,14 @@ return view("cv.add");
     public function Update(Request $req)
 {
     $req->validate([
-        'title' => 'required|max:255',
-        'presontation' => 'required',
+        'typeCV' => 'required|max:255',
+        'name' => 'required',
     ]);
 
         $id =$req->input('idcv');
-        $new_cv = Cvs ::find($id);
-        $new_cv->title = $req->input('title');
-        $new_cv->presontation = $req->input('presontation');
+        $new_cv = Cv ::find($id);
+        $new_cv->typeCV= $req->input('typeCV');
+        $new_cv->name = $req->input('name');
         $new_cv->save();        
         session()->flash("success","le Cv a été modifier avec success !");
 
@@ -83,12 +85,14 @@ return view("cv.add");
     // supprimer un CV
     public function Delete($id)
     {
-  // echo $id;
+   //echo $id;
 
 
-  $cv_to_delete = Cvs ::find($id);
-  $cv_to_delete->delete();
+  $cv_to_delete = Cv ::find($id);
+  $cv_to_delete->Delete();
   echo '{"msg":"success"}';
+   
+//   print_r($cv_to_delete);
 
 
     }
