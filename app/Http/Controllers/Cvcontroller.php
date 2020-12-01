@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
  use App\Cv;
+ use App\User;
 
 
 class Cvcontroller extends Controller
@@ -85,15 +86,36 @@ return view("cv.add");
     // supprimer un CV
     public function Delete($id)
     {
-   //echo $id;
+
+
+//using delete physique 
 
 
   $cv_to_delete = Cv ::find($id);
-  $cv_to_delete->Delete();
-  echo '{"msg":"success"}';
-   
-//   print_r($cv_to_delete);
+ echo  $cv_to_delete->delete();
+   echo '{"msg":"success"}';
+//    echo( $cv_to_delete->delete());
 
 
+
+
+
+    }
+    // Exportation de data base actuel 
+    // public function export()
+    // {
+    //     $sql = "select ...";
+    //     $db = new  () ;
+    //     $stmt = $db->prepare($sql);
+    //     $stmt->execute();
+    //     $result = $stmt->fetchAll();
+        
+    //     file_put_contents("output.txt", json_encode($result));
+
+    // }
+    public function tst()
+    {
+     
+return User::find(1)->my_cv;
     }
 }
