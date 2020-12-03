@@ -24,7 +24,7 @@
 @endif
 
 
-  <form action="{{ url('add') }}" method="POST">
+  <form id="myform" action="{{ url('add') }}" method="POST">
   {{csrf_field()}}
     <div class="col-md-8">
         <input class="form-control" type="text" id="title" name="title" placeholder="title">
@@ -36,8 +36,10 @@
       <br>
     </div>
     <div class="col-md-12 form-group">
-          <button class="btn pull-left" type="submit">Send</button>
+          <button class="btn pull-left" type="submit">Send</button>      <button style="margin-left: 6px;" class="btn " onclick="clearIt()" type="button">ckear</button>
+
       </div>
+
       </form>
   </div>
 </div>
@@ -94,5 +96,21 @@
 
 
 
+<script>
 
+ 
+  function  clearIt()
+{
+ 
+ 
+ let myform = document.getElementById('myform')
+
+myform.reset();
+
+
+}
+
+
+
+</script>
 @endsection
