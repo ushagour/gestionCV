@@ -28,3 +28,7 @@ Route::get("/delete/{id}","Cvcontroller@Delete");
 
 // pour teste relationsheps
 Route::get("/tst","Cvcontroller@tst");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
