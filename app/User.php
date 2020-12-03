@@ -10,6 +10,14 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+
+
+     function my_cv()
+     {
+          return $this->hasOne('App\cv');
+     }
+
+
     /**
      * The attributes that are mass assignable.
      *

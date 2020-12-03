@@ -24,3 +24,7 @@ Route::POST("/add","Cvcontroller@Add");
 Route::get("/{id}/modifier","Cvcontroller@Modifier");
 Route::post("/update","Cvcontroller@Update");
 Route::get("/delete/{id}","Cvcontroller@Delete");
+
+
+// pour teste relationsheps
+Route::get("/tst","Cvcontroller@tst");
