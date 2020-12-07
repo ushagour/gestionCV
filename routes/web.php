@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get("/","Cvcontroller@index");
+Route::get("/mesCV","Cvcontroller@index");
 Route::get("/ajouterCV","Cvcontroller@Ajouter");
 Route::POST("/add","Cvcontroller@Add");
 Route::get("/{id}/modifier","Cvcontroller@Modifier");
@@ -31,4 +31,4 @@ Route::get("/tst","Cvcontroller@tst");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');

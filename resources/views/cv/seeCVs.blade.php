@@ -1,7 +1,7 @@
 @extends("layout.page_master")
 
 
-@section("container")
+@section("content")
 
 <div class="container">
     <div class="row">

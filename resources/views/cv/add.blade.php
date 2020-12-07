@@ -1,7 +1,7 @@
 @extends("layout.page_master")
 
 
-@section("container")
+@section("content")
 
 <!-- Container (Contact Section) -->
 <div id="contact" class="container">
