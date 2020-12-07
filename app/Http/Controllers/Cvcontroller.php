@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
  use App\Cv;
  use App\User;
+ use Auth;
 
 
 class Cvcontroller extends Controller
@@ -43,7 +44,7 @@ return view("cv.add");
         DB::table('cvs')->insert([
                 'typeCV' =>  $req->input("title"),
                 'name' =>  $req->input("presontation"),
-                'user_id' =>  1,// session userid
+                'user_id' =>  Auth::user()->id, // session userid 
                 'created_at' =>  date("Y-m-d h:i"),
             ]
         );
