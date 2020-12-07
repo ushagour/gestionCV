@@ -19,7 +19,7 @@ class Cvcontroller extends Controller
         ->where('user_id',1)
         ->paginate(5);
 
-        return view("cv.index",["liste"=>$listeCV]);
+        return view("cv.seeCVs",["liste"=>$listeCV]);
     }
 
     // affichage du formulaire de creation CV 
