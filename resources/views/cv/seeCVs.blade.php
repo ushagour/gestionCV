@@ -25,6 +25,7 @@
                         <td> type de CV  </td>
                         <td> name </td>
                         <td> date </td>
+                        <td> utilisateure </td>
                         <td> operations  </td>
                     </tr>
                 </thead>

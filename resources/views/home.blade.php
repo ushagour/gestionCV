@@ -5,7 +5,7 @@
     <div class="row ">
 <div  class=" bg-1">
         <center>
-            <h1><strong>welcom to cv app</strong></h1>
+            <h1><strong>{{__('home.welcome_pg')}}</strong></h1>
         </center>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -53,7 +53,7 @@
 </div>
 <!-- Container (The Band Section) -->
 <div id="band" class="container text-center">
-    <h3>THE BAND</h3>
+    <h3>{{__('home.the_band')}}</h3>
     <p><em>Rédigez votre CV en 3 simples étapes.!</em></p>
 
     <p>Créez votre CV moderne et professionnel avec E-CV. Notre générateur de curriculum vitae est l’outil de référence

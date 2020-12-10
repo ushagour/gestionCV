@@ -12,12 +12,15 @@ use Illuminate\Support\Facades\DB;
 
 class Cvcontroller extends Controller
 {
+    public function __construct()
+    {
+$this->middleware('auth');
+    }
 
     //index of page 
     public function index()
     {
         $listeCV = DB::table('cvs')
-        ->where('user_id',1)
         ->paginate(5);
 
         return view("cv.seeCVs",["liste"=>$listeCV]);
