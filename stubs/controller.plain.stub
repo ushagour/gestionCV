@@ -8,4 +8,8 @@ use Illuminate\Http\Request;
 class {{ class }} extends Controller
 {
     //
+       function  index()
+         {
+               // this function will be executed as first
+         }
 }
