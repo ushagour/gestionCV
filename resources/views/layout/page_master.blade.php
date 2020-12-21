@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="{{ URL::asset('js/Myjs.js') }}"></script>
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -59,7 +60,11 @@
 
 
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">{{__('home.welcome_sess')}} {{ Auth::user()->name }}
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+          <!-- {{__('home.welcome_sess')}} -->
+
+          <span class="date"></span>
+          {{ Auth::user()->name }}
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
