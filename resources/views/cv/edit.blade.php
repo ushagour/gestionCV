@@ -6,7 +6,7 @@
 <!-- Container (Contact Section) -->
 <div id="contact" class="container">
 
-  <h3 class="text-center"> modifier le cv numero {{ $cv_to_edit->id}}</h3>
+  <h3 class="text-center"> modifier le cv numero {{ $cv_to_edit->user->name}}</h3>
   <div class="row">
   
 @if(count($errors))
