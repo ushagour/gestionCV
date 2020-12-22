@@ -20,9 +20,9 @@ use Illuminate\Support\str;
 //     return view('welcome');
 // });
 
-Route::group(['middleware' => ['isloged']], function () {
-    //
-});
+// Route::group(['middleware' => ['isloged']], function () {
+//     //
+// });
 
 Route::get("/mesCV","Cvcontroller@index");
 Route::get("/ajouterCV","Cvcontroller@Ajouter");
@@ -30,7 +30,7 @@ Route::POST("/add","Cvcontroller@Add");
 Route::get("/{id}/modifier","Cvcontroller@Modifier");
 Route::post("/update","Cvcontroller@Update");
 Route::get("/delete/{id}","Cvcontroller@Delete");
-Route::get("/tst","Cvcontroller@tst");
+Route::get("/tst","Cvcontroller@test");
 
 
 
@@ -49,21 +49,21 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 //laravel 7 des nouveau fonctionnalité
- Route::get('/NewFeature',function(){
+//  Route::get('/NewFeature',function(){
 
 
 
-    $info= 'hi ,ali';
+//     $info= 'hi ,ali';
 
-    $info = str::of($info)->replaceFirst('hi','hello',$info)
-                        //   ->ucfirst($info);
-                          ->Camel($info);
-
-
-
-echo '<h1>'.$info.'</h1>';
+//     $info = str::of($info)->replaceFirst('hi','hello',$info)
+//                         //   ->ucfirst($info);
+//                           ->Camel($info);
 
 
 
+// echo '<h1>'.$info.'</h1>';
 
- });
+
+
+
+//  });
