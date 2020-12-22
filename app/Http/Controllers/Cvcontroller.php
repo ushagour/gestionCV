@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploodedFile; //classe pour utilser la methode store 
+
+
 use Illuminate\Support\Facades\DB;
 
  use App\Cv;
  use App\User;
  use Auth;
 
+ 
 
 class Cvcontroller extends Controller
 {
@@ -29,26 +33,30 @@ $this->middleware('auth');
     // affichage du formulaire de creation CV 
     public function Ajouter()
     {
-    
-return view("cv.add");
-
+      return view("cv.add");
     }
+
     // enregistré un Cv
     public function Add(Request $req)
     {
-
-    
-        
         $req->validate([
             'title' => 'required|max:255',
             'presontation' => 'required',
+            'up_file' => 'required',
+            
         ]);
 
+       $path="no_ files";
+ if ($req->hasFile('up_file')) {
+
+$path = $req->file('up_file')->store('up_files');
+}
         DB::table('cvs')->insert([
                 'typeCV' =>  $req->input("title"),
                 'name' =>  $req->input("presontation"),
                 'user_id' =>  Auth::user()->id, // session userid 
                 'created_at' =>  date("Y-m-d h:i"),
+                'photo'       =>$path,
             ]
         );
 
@@ -58,7 +66,7 @@ return view("cv.add");
         // $cvmodel->user_id= session('data')-;
      //   return $req->all();
         session()->flash("success","le Cv a été enregigtre avec success !");
-         return redirect('/');
+         return redirect('/mesCV');
 
 }
     // recupérer un CV et le metre  
