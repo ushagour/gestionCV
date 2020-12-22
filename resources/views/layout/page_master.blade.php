@@ -29,6 +29,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url('/')}}">{{__('home.home')}}</a></li>
+        <li><a href="#band">{{__('home.band')}}</a></li>
       @guest
     
 
@@ -54,8 +56,7 @@
             <li><a href="#">Media</a></li> 
           </ul>
         </li> -->
-        <li><a href="{{ url('/')}}">{{__('home.home')}}</a></li>
-        <li><a href="#band">{{__('home.band')}}</a></li>
+    
         <li><a href="{{ url('/mesCV') }}">{{__('home.mycvs')}}</a></li>
 
 
