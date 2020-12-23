@@ -1,14 +1,17 @@
 @extends('layout.page_master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('home.Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+
+
+
+<div class="main">
+    <div class="container">
+        <center>
+            <div class="middle">
+                <div id="login">
+               
+                <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -63,15 +66,42 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('home.Register') }}
-                                </button>
+              
+                                <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit"
+                                        value="{{ __('home.Register') }}"></span>
                             </div>
                         </div>
                     </form>
+                    <div class="clearfix"></div>
+
+                </div> <!-- end login -->
+                <div class="logo">LOGO
+
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </center>
+    </div>
+
+</div>
+
+
+
+
+
+<!-- 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('home.Register') }}</div>
+
+                <div class="card-body">
+  
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 @endsection

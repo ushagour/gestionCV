@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet" type="text/css" >
   <link href="{{ URL::asset('css/MyCustomCSS.css') }}" rel="stylesheet" type="text/css" >
+  <link href="{{ URL::asset('css/loginCss.css') }}" rel="stylesheet" type="text/css" >
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -30,7 +33,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
       <li><a href="{{ url('/')}}">{{__('home.home')}}</a></li>
-        <li><a href="#band">{{__('home.band')}}</a></li>
+        <li><a href="{{ url('/')}}#contactUS">{{__('home.contactUS')}}</a></li>
       @guest
     
 

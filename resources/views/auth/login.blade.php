@@ -1,13 +1,9 @@
 @extends('layout.page_master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">{{ __('home.login') }}</div>
 
-                <div class="card-body">
+
+<!-- <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -65,9 +61,83 @@
                             </div>
                         </div>
                     </form>
+                </div> -->
+
+
+
+
+<div class="main">
+    <div class="container">
+        <center>
+            <div class="middle">
+                <div id="login">
+
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <fieldset class="clearfix">
+
+                            <p><span class="fa fa-user"></span><input id="email" type="email"
+                                    class=" form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required autocomplete="email" autofocus></p>
+                            <!-- JS because of IE support; better: placeholder="Username" -->
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            <p><span class="fa fa-lock"></span><input id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    required autocomplete="current-password"></p>
+                            <!-- JS because of IE support; better: placeholder="Password" -->
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+
+                            <div>
+                                <!-- <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                    {{ old('remember') ? 'checked' : '' }}>
+
+                                <label class="form-check-label" for="remember">
+                                    {{ __('Remember Me') }}
+                                </label> -->
+
+
+
+
+                                @if (Route::has('password.request'))
+                    <a class="small-text"
+                                        href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}</a>
+                                @endif
+
+
+
+                                <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit"
+                                        value="{{ __('home.login') }}"></span>
+
+
+                            </div>
+
+                        </fieldset>
+                        <div class="clearfix"></div>
+                    </form>
+
+                    <div class="clearfix"></div>
+
+                </div> <!-- end login -->
+                <div class="logo">LOGO
+
+                    <div class="clearfix"></div>
                 </div>
+
             </div>
-        </div>
+        </center>
     </div>
+
 </div>
+
+
 @endsection
