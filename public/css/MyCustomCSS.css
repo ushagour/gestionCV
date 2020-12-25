@@ -6,3 +6,10 @@
     /* Height of the footer*/  
     height: 40px; 
 }
+
+/* detailModal */
+.detailModal{
+  width: 100%;
+  padding: 10px;
+}
+/*detailModal */

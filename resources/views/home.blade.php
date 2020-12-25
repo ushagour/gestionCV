@@ -8,12 +8,12 @@
 <div id="home" class="containerH">
 <center>    <h3>{{__('home.the_band')}}</h3>
 </center>
-    <p><em>{{__('home.the_band_title')}}</em></p>
+    <p class="my-element"><em>{{__('home.the_band_title')}}</em></p>
 
-    <p>{{__('home.the_band_content')}}</p>
+    <p class="my-element">{{__('home.the_band_content')}}</p>
     <br>
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 my-element">
             <p class="text-center"><strong>{{__('home.the_band_step1_title')}}</strong></p><br>
             <p>{{__('home.the_band_step1_content')}}</p>
 
@@ -24,7 +24,7 @@
                 <p>Guitarist and Lead Vocalist</p>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 my-element">
             <p class="text-center"><strong>{{__('home.the_band_step2_title')}}.</strong></p><br>
             <p>{{__('home.the_band_step2_content')}}.</p>
             <a href="#demo2"  class="btn butn" data-toggle="collapse">
@@ -35,7 +35,7 @@
              
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 my-element">
             <p class="text-center"><strong>{{__('home.the_band_step3_title')}}.</strong></p><br>
             <p>{{__('home.the_band_step3_content')}}.</p>
             <a href="#demo3" class="btn butn" data-toggle="collapse">
@@ -57,9 +57,9 @@
   <h3 class="text-center">{{__('home.contactUS')}}</h3>
   <div class="row">
     <div class="col-md-4">
-      <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> RABAT, MR</p>
       <p><span class="glyphicon glyphicon-phone"></span> {{__('home.contactUS')}}</p>
-      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> Email: mail@mail.com</p>
     </div>
     <div class="col-md-8">
       <div class="row">

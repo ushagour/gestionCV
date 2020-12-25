@@ -9,8 +9,7 @@
   <link href="{{ URL::asset('css/MyCustomCSS.css') }}" rel="stylesheet" type="text/css" >
   <link href="{{ URL::asset('css/loginCss.css') }}" rel="stylesheet" type="text/css" >
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -103,7 +102,11 @@
 
 <!-- Footer -->
 <footer class="footer text-center">
+
   <p> {{__('home.footer')}} <a href="https://www.site.com" data-toggle="tooltip" title="Visit w3schools"> Cvs-app</a></p> 
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
 </footer>
 
 
