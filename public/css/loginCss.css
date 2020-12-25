@@ -17,6 +17,9 @@ height:calc(100vh);
 width:100%;
 }
 
+
+
+
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
@@ -156,4 +159,28 @@ fieldset{
 .middle {
   display: flex;
   width: 600px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .logo {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .logo {
+    flex: 100%;
+    max-width: 100%;
+    display: none;
+  }
+}
+
+.my-element {
+  display: inline-block;
+
+  animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
 }
