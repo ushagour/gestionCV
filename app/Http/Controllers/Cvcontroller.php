@@ -24,7 +24,11 @@ $this->middleware('auth');
     //index of page 
     public function index()
     {
-        $listeCV = DB::table('cvs')
+       $listeCV = DB::table('cvs')->join('users', 'users.id', '=', 'cvs.user_id')
+       ->select('cvs.*', 'users.name as urname')
+
+        //$listeCV =Cv ::()
+        
         ->paginate(5);
 
         return view("cv.seeCVs",["liste"=>$listeCV]);
@@ -74,8 +78,8 @@ $path = $req->file('up_file')->store('up_files');
     {
         $cv_to_edit = Cv ::find($id);
 
-        return view("cv.edit",["cv_to_edit"=>$cv_to_edit]);
-     //   echo $id;
+       return view("cv.edit",["cv_to_edit"=>$cv_to_edit]);
+     // echo $cv_to_edit;
     }
     //update cv 
     public function Update(Request $req)
@@ -88,7 +92,7 @@ $path = $req->file('up_file')->store('up_files');
         $id =$req->input('idcv');
         $new_cv = Cv ::find($id);
         $new_cv->typeCV= $req->input('typeCV');
-        $new_cv->name = $req->input('name');
+        $new_cv->full_name = $req->input('name');
         $new_cv->save();        
         session()->flash("success","le Cv a été modifier avec success !");
 
